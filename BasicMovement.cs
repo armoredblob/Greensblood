@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
+    // Declare variables
     public float speed;
     public Transform mainCamera;
     CharacterController controller;
     private void Start()
+    
+    // Controller method
     {
         controller = GetComponent<CharacterController>();
     }
+    
+    // Assign keys 
     private void Update()
     {
         Vector3 moveDirection;
@@ -32,7 +37,7 @@ public class BasicMovement : MonoBehaviour
             moveDirection -= mainCamera.right;
         }
     
-
+        // moveDirection method
         moveDirection.y = 0;
         moveDirection.Normalize();
         controller.SimpleMove(moveDirection * speed);

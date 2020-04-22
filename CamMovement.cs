@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class CamMovement: MonoBehaviour
 {
+    // Declare variables
     public Transform player;
     public float rotateAmount;
     float lookX, lookY;
+    
+    // Configure camera with mouse
     void Update()
     {
         lookX = Input.GetAxis("Mouse X");
@@ -35,6 +38,7 @@ public class CamMovement: MonoBehaviour
             transform.RotateAround(player.position, transform.right, -rotateAmount);
         }
         
+        // Camera transform method
         transform.LookAt(player);
     }
 }
